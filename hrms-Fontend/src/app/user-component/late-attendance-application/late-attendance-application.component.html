@@ -1,0 +1,137 @@
+<div class="attendance">
+    <div class="attendance-list">
+        <h1 class="ml-3 fw-bold text-success mt-2">Application</h1>
+
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row" style="float: right;">
+        <div class="col-md-12" style="margin-right: 30px;">
+            <select (change)="showUserValue($any($event.target).value)" #reportType class="form-control"
+                [(ngModel)]="selected">
+                <option value="">Choose Application Type</option>
+                <option value="all">Leave Application</option>
+
+                <option value="single">Late Attendance Application</option>
+            </select><br>
+
+            <div *ngIf="value">
+
+                <div class="card">
+                    <form [formGroup] = "formGroup">
+                        <div class="card-body" >
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                        <label for="leave-type">Employee ID</label>
+                                        <input type="text" formControlName="employee_id"  class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                        <label for="leave-type">Employee Name</label>
+                                        <input type="text" formControlName="employee_name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                        <label class="control-label" for="datepickerstart">Employee Email</label>
+                                        <input type="text" formControlName="email" class="form-control" >
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                        <label class="control-label" for="datepickerstart">Attendance Date</label>
+                                        <input type="date" formControlName="date" #date3 class="form-control" >
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                        <label>Reason</label>
+                                        <textarea class="form-control" formControlName="message" rows="4" id="reason" name="reason"></textarea><span class="pmd-textfield-focused"></span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="card-footer" style="margin-bottom: 6px;">
+                            <button mat-raised-button class="fw-bold ml-3" color="primary"
+                    (click)="application()">Apply</button>
+                        </div>
+                        
+                    </form>
+                </div>
+
+                
+                <!-- <input #date3 style="width: 100px;" type="date"> -->
+                
+            </div>
+
+            <div *ngIf="!value">
+                <div class="card">
+                    <form>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                        <label for="leave-type">Leave Type</label>
+                                        <select name="leave-type" id="leave-type" class="form-control" title="Please select a Leave Type" required="">
+                                            <option>Leave Type Choose</option>
+                                            <option>Sick Leave</option>
+                                            <option>Casual Leave</option>
+                                            <option>EBL</option>
+                                            <option>Unpaid Leave</option>
+                                            <option>Hourly Leave</option>
+                                        </select><span class="pmd-textfield-focused"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                        <label class="control-label" for="datepickerstart">Start Date</label>
+                                        <input type="date" #date1 class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                        <label class="control-label" for="datepickerend">End Date</label>
+                                        <input type="date" #date2 class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                        <label>Reason</label>
+                                        <textarea class="form-control" rows="4" id="reason" name="reason"></textarea><span class="pmd-textfield-focused"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="custom-control custom-checkbox pmd-checkbox">
+                                        <input class="custom-control-input" type="checkbox" value="" id="inverse_defaultCheck1">
+                                        <label class="custom-control-label" for="inverse_defaultCheck1">
+                                            Is it a Half Day?
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button mat-raised-button class="fw-bold ml-3" color="primary"
+                    (click)="showUser(date1.value, date2.value)">Apply Leave</button>
+                        </div>
+                        
+                    </form>
+                </div>
+                
+                
+            </div>
+
+
+
+       
+
+
+

@@ -1,0 +1,25 @@
+<main appHideScrollY>
+<div class="row justify-content mt-5" style="margin-left: 25%;">
+    <div class="col-md-8 card">
+        <div class="row">
+            <h2 class="col mt-3">Change Password</h2>
+        </div>
+        <hr>
+        <form [formGroup] = "formGroup">
+            <div class="form-group">
+                <label>Enter New Password</label>
+                <input formControlName="password" type="password" class="form-control">
+            </div>
+            <div class="btn-row">
+                <button type="submit" class="btn btn-primary mr-2 mb-5" (click)="changePassword()">Change Password</button>
+            </div>
+        </form>
+        <div *ngIf="!success" style="margin-top: 10%;"> </div>
+
+        <div *ngIf="success" class="alert alert-success mt-3" role="alert">
+            <h4 class="alert-heading">Success!</h4>
+            <p>Password Changed Successfully.</p>
+        </div>
+    </div>
+</div>
+</main>

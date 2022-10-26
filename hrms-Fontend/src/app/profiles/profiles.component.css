@@ -1,0 +1,69 @@
+
+ .main-content {
+  margin-top: 55px !important;
+  min-height: calc(100vh - 123px);
+  padding: 30px 15px;
+}
+.card .card-header {
+  z-index: 3 !important;
+}
+
+.card [class*=card-header-], .card[class*=bg-] {
+  color: #fff;
+}
+.card [class*=card-header-] .card-title + .card-category {
+  color: rgba(255, 255, 255, 0.62);
+}
+  .example-full-width {
+    width: 100%;
+  }
+  img{
+      border-radius: 50%;
+      vertical-align: middle;
+    border-style: none;
+  }
+  .card-avatar{
+      box-sizing: border-box;
+  }
+  .card-profile .card-avatar img {
+    width: 100%;
+    height: auto;
+}
+
+.card-profile {
+  margin-top: 30px;
+  text-align: center;
+}
+.card-profile .card-avatar {
+  max-width: 130px;
+  max-height: 130px;
+}
+
+.card-profile .card-avatar {
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 16px 38px -12px, rgba(0, 0, 0, 0.12) 0px 4px 25px 0px, rgba(0, 0, 0, 0.2) 0px 8px 10px -5px;
+  margin: -50px auto 0px;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 0px;
+}
+.card .card-header {
+  border-radius: 3px;
+  margin-top: -20px;
+  padding: 10px;
+  width: 96%;
+  margin-left: 2%;
+  height: 80px;
+}
+
+.card .card-header-danger .card-icon, .card .card-header-danger:not(.card-header-icon):not(.card-header-text), .card .card-header-danger .card-text {
+  box-shadow: 0 4px 20px 0px rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(244 67 54 / 40%);
+}
+.card .card-header-danger, .card .card-header-danger .card-text, .card .card-header-danger:not(.card-header-icon):not(.card-header-text), .card.bg-danger, .card.card-rotate.bg-danger .front, .card.card-rotate.bg-danger .back {
+  background: linear-gradient(60deg, #ef5350, #e53935);
+}
+.card-description{
+    margin-top: 60px;
+}
+.card-title{
+    margin-left: 50px;
+}

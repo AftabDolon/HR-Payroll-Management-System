@@ -1,0 +1,199 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="wrap-fpanel">
+            <div class="panel panel-default">
+                <!-- *********     Employee Search Panel ***************** -->
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <strong>Manage Salary Details</strong>
+                    </div>
+                </div>
+                <form [formGroup]="userForms" class="form-horizontal form-groups-bordered">
+                    <div class="panel-body">
+                        <div class="row"><br />
+                            <div class="col-sm-12 form-groups-bordered">
+                                <div class="form-group" id="border-none">
+                                    <label for="field-1" style="font-weight: 750; font-size: large;"
+                                        class="col-sm-3 control-label">Select Designation <span
+                                            class="required">*</span></label>
+                                    <div class="col-sm-5">
+
+                                        <select #id formControlName="employee_designation"
+                                            (change)="onChangeServer($event, id.value)" class="form-control">
+                                            <option>Select Designation</option>
+                                            <option *ngFor="let empId of employeeDesignations">
+                                                {{empId}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-4" id="border-none">
+                                    <label for="field-1" style="font-weight: 750; font-size: large;"
+                                        class="col-sm-3 control-label">Employee <span class="required">*</span></label>
+                                    <div class="col-sm-5">
+                                        <select #name formControlName="employeeName" (change)="onChangeSecondServer($event, name.value)" class="form-control">
+                                            <option>Select Employee Name</option>
+                                            <option *ngFor="let empId of employeeList" [value]="empId[0]">
+                                                {{empId[1]}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-5" id="border-none">
+                                    <label for="field-1" class="col-sm-3 control-label"></label>
+                                    <div class="col-sm-5">
+                                        <button id="submit" (click)="valueShow()" type="submit" name="sbtn" value="1"
+                                            class="btn btn-primary btn-block">Go</button>
+                                    </div>
+                                </div>
+                            </div><br />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div><!-- ******************** Employee Search Panel Ends ******************** -->
+    </div>
+
+    <div *ngIf="show">
+        <form [formGroup]="formGroup" class="form-horizontal form-groups-bordered">
+            <div class="wrap-fpanel">
+                <!-- ********************************* Salary Details Panel ***********************-->
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <strong>Salary Details</strong>
+                            </div>
+                        </div>
+                        <div class="panel-body ">
+
+                            <div class="row">
+                                <div class="col-sm-12 form-groups-bordered">
+                                    <div class="form-group" id="border-none">
+                                        <label for="field-1" class="col-sm-3 control-label">Employment Type <span
+                                                class="required">*</span></label>
+                                        <div class="col-sm-5">
+                                            <select formControlName="status" class="form-select">
+                                                <option value="Provision">Provision</option>
+                                                <option value="permanent">Permanent</option>
+                                            </select>
+                                        </div><br>
+                                    </div>
+                                    <div class="form-group" id="border-none">
+                                        <label for="field-1" class="col-sm-3 control-label">Basic Salary <span
+                                                class="required">*</span></label>
+                                        <div class="col-sm-5">
+                                            <input type="text" readonly formControlName="basic"
+                                                class="salary form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- ***************** Salary Details  Ends *********************-->
+
+                <!-- ******************-- Allowance Panel Start **************************-->
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <strong>Allowances</strong>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="">
+                                    <label class="control-label">House Rent Allowance </label>
+                                    <input type="text" readonly formControlName="houseRent"
+                                        class="salary form-control">
+                                </div>
+                                <div class="">
+                                    <label class="control-label">Medical Allowance </label>
+                                    <input type="text" readonly formControlName="medical"
+                                        class="salary form-control">
+                                </div>
+                                <div class="">
+                                    <label class="control-label">Transport Allowance </label>
+                                    <input type="text" readonly formControlName="transport" class="salary form-control">
+                                </div>
+                                <div class="">
+                                    <label class="control-label">Fuel Allowance </label>
+                                    <input type="text" readonly formControlName="fuel" class="salary form-control">
+                                </div>
+                                <div class="">
+                                    <label class="control-label">Phone Bill Allowance </label>
+                                    <input type="text" readonly formControlName="phoneBill"
+                                        class="salary form-control">
+                                </div>
+                                <div class="">
+                                    <label class="control-label">Other Allowance </label>
+                                    <input type="text" readonly name="other_allowance" class="salary form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- ********************Allowance End ******************-->
+
+                    <!-- ************** Deduction Panel Column  **************-->
+                    <div class="col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <strong>Deductions</strong>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="">
+                                    <label class="control-label">Provident Fund </label>
+                                    <input type="text" readonly formControlName="providentFund" class="deduction form-control">
+                                </div>
+                                <div class="">
+                                    <label class="control-label">Tax Deduction </label>
+                                    <input type="text" readonly formControlName="tax" class="deduction form-control">
+                                </div>
+                                <div class="">
+                                    <label class="control-label">Other Deduction </label>
+                                    <input type="text" readonly name="other_deduction" class="deduction form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- ****************** Deduction End  *******************-->
+                </div>
+
+                <!-- ************** Total Salary Details Start  **************-->
+                <div class="col-sm-6 mt-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <strong>Total Salary Details</strong>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="">
+                                <label class="control-label">Gross Salary </label>
+                                <input type="text" formControlName="salary" name="provident_fund" id="total"
+                                    class="form-control">
+                            </div>
+                            <div class="">
+                                <label class="control-label">Total Deduction </label>
+                                <input type="text" readonly formControlName="totalDeduc" id="deduc"
+                                    class="form-control">
+                            </div>
+                            <div class="">
+                                <label class="control-label">Net Salary </label>
+                                <input type="text" readonly formControlName="netSalary" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- ****************** Total Salary Details End  *******************-->
+
+                <div class="salery_btn margin mt-3 ml-3">
+                    <button id="salery_btn" type="submit" class="btn btn-primary btn-block" (click)="updateSalary()">Save</button>
+                </div>
+            </div>
+            <!--    ************************* Hidden Input Data *******************-->
+
+        </form>
+    </div>
+</div>

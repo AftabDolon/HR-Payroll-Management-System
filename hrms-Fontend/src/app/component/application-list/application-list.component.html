@@ -1,0 +1,108 @@
+<div class="card" style="margin-top: 4.5rem!important;">
+    <div class="card-header">
+      <span><i class="bi bi-table me-2"></i></span> Application History
+    </div>
+  <table class="table table-bordered table-striped table-responsive mt-2 ml-3 bg-white">
+      <thead>
+          <tr>
+              <th scope="col">Action</th>
+              <th scope="col">Employee ID</th>
+              <th scope="col">Employee Name</th>
+              
+              <th scope="col">Department</th>
+              <th scope="col">Designation</th>
+              <th scope="col">Application Date</th>
+              <th scope="col">Attendance Date</th>
+              <th scope="col">Status</th>
+              <th scope="col">Reason</th>
+              
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of applicationList; let i = index">
+          <td style="cursor: pointer;"><a (click)="showUser(item.id)" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><i class="fa fa-eye "></i></a></td>
+  
+          <td>{{item.employee.employeeId}}</td>
+          <td>{{item.employee.employeeName}}</td>
+          <td>{{item.employee.department}}</td>
+          <td>{{item.employee.employeeDesignation}}</td>
+          <td>{{item.applicationDate | date: 'MMM, y'}}</td>
+          <td>{{item.attendanceDate | date: 'MM-dd-yy'}}</td>
+          <td [className]="item.status !== 'Pending' ? 'status status-paid mt-3' : 'status status-pending text-danger mt-3'">{{item.status}}</td>
+          <td>{{item.message}}</td>
+          <!-- <td> {{item.paymentType}} </td>
+          <td>
+              <a >Generate Payslip</a>
+          </td> -->
+      </tr>
+  
+      </tbody>
+  </table>
+  
+  </div>
+
+
+
+
+  <!-- Modal -->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLabel">Application Template</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup] = "formGroup">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-6">
+              <label for="recipient-name" class="col-form-label">Employee ID</label>
+              <input type="hidden" formControlName="empId">
+              <input type="text" formControlName="employee_id" class="form-control"  id="recipient-name" >
+              </div>
+                <div class="col-md-6">
+              <label for="recipient-name" class="col-form-label">Employee Name</label>
+              <input type="hidden" formControlName="eId">
+              <input type="text" formControlName="employee_name" class="form-control" >
+              </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="recipient-name" class="col-form-label">Reason</label>
+                    <textarea class="form-control" formControlName="message" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="recipient-name" class="col-form-label">Attendance Date</label>
+                    <input type="text" formControlName="date" class="form-control" >
+                    </div>
+              <div class="col-md-6">
+            <div class="form-group mt-2">
+              
+              <label class="fw-bold mb-3">Status</label>
+              <select formControlName="status" class="form-control" >
+                <option value="Approved">Approved</option>
+                <option  value="Pending">Pending</option>
+                
+                <option value="Reject">Reject</option>
+            </select>
+              </div>
+          </div>
+          
+          </div>
+          
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="getValue()">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>

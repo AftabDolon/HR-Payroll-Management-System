@@ -1,0 +1,216 @@
+<div class="container rounded bg-white mt-1 mb-1">
+  <div class="row">
+    <div class="col-md-3 border-right">
+      <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+        <img class="rounded-circle mt-5" width="150px" src="../../../../assets/img/img1.png" />
+
+        <br />
+        <span class="font-weight-bold">Example Company Ltd.</span><span class="text-black-50">Miazi Manjil, Tusardhara,
+          North Sahjhanpur, Road-3, Khilgaon,
+          Dhaka-1217</span><span> </span>
+      </div>
+    </div>
+    <div class="col-md-5 border-right">
+      <form [formGroup]="userForms" (ngSubmit)="userinsert()">
+        <div class="p-3 py-5">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="text-right">Add User</h2>
+          </div>
+          <!-- <div class="row mt-2">
+                                          <div class="col-md-6"><label class="labels">Name</label><input type="text"
+                                                          class="form-control" placeholder="first name" value=""></div>
+                                          <div class="col-md-6"><label class="labels">Surname</label><input type="text"
+                                                          class="form-control" value="" placeholder="surname"></div>
+                                  </div> -->
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <label class="labels">User ID</label><input type="text" class="form-control" placeholder="enter User ID"
+                value="" formControlName="employeeId" />
+            </div>
+            <div class="col-md-12">
+              <label class="labels">User Name</label><input type="text" class="form-control"
+                placeholder="enter User name" value="" formControlName="employeeName" />
+            </div>
+
+
+
+            <div class="col-md-12">
+              <label class="labels">Role</label>
+              <select class="form-control" formControlName="role">
+                <option value="" selected>Select Role....</option>
+                <option value="Admin" selected> Admin </option>
+                <option value="Editor" selected> Editor </option>
+                <option value="User" selected> User </option>
+                <!-- <option *ngFor="let role of allRole" [value]="role.id">
+                    {{ role.name }}
+                  </option> -->
+              </select>
+            </div>
+
+            <div class="col-md-12">
+              <label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email id"
+                value="" formControlName="email" />
+            </div>
+
+            <div class="col-md-12">
+              <label class="labels">Phone</label><input type="text" class="form-control" placeholder="Phone" value=""
+                formControlName="phone" />
+            </div>
+
+            <div class="col-md-12"><label class="labels">NID Number</label><input type="text" class="form-control"
+                formControlName="nidNumber" placeholder="enter NID number" value=""></div>
+            <div class="col-md-12"><label class="labels">Present Address</label><input type="text" class="form-control"
+                formControlName="presentAddress" placeholder="enter present address" value=""></div>
+            <div class="col-md-12"><label class="labels">Permanent Address</label><input type="text"
+                class="form-control" placeholder="enter permanent address" formControlName="permanentAddress" value="">
+            </div>
+
+            <div class="col-md-12">
+              <label class="labels">Employee Type</label>
+              <select class="form-control" formControlName="employeeType">
+                <option value="" selected>Select Employee Type....</option>
+                <option value="Provision" selected> Provision </option>
+                <option value="Permanent" selected> Permanent </option>
+                <option value="Internship" selected> Internship </option>
+                <!-- <option *ngFor="let role of allRole" [value]="role.id">
+                        {{ role.name }}
+                      </option> -->
+              </select>
+            </div>
+            <div class="col-md-12"><label class="labels">Joining Date</label><input type="date" class="form-control"
+                formControlName="joiningDate" value=""></div>
+            <!-- <div class="col-md-12"><label class="labels">Area</label><input type="text"
+                class="form-control" placeholder="enter address line 2"
+                value=""></div> -->
+            <div class="col-md-12">
+              <label class="labels">Salary Grade</label>
+              <select class="form-control" formControlName="salary">
+                <option value="" selected>Select Salary Grade....</option>
+                <option value="Grade 9" selected> Grade 9 </option>
+                <option value="Grade 10" selected> Grade 10 </option>
+                <option value="Grade 11" selected> Grade 11 </option>
+                <option value="Grade 9B" selected> Grade 9B </option>
+                <option value="Grade 4" selected> Grade 4 </option>
+                <option value="Grade 3" selected> Grade 3 </option>
+                <option value="Grade 2" selected> Grade 2 </option>
+
+                <!-- <option *ngFor="let role of allRole" [value]="role.id">
+                        {{ role.name }}
+                      </option> -->
+              </select>
+            </div>
+
+            <div class="col-md-12">
+              <label class="labels">Blood Group</label>
+              <select class="form-control" formControlName="bloodGroup">
+                <option value="" selected>Select Blood Group....</option>
+                <option value="A+" selected> A+ </option>
+                <option value="A-" selected> A- </option>
+                <option value="B+" selected> B+ </option>
+                <option value="B-" selected> B- </option>
+                <option value="O+" selected> O+ </option>
+                <option value="O-" selected> O- </option>
+                <option value="AB+" selected> AB+ </option>
+                <option value="AB-" selected> AB- </option>
+                <!-- <option *ngFor="let role of allRole" [value]="role.id">
+                        {{ role.name }}
+                      </option> -->
+              </select>
+            </div>
+            <div class="col-md-12">
+              <label class="labels">Educational Status</label>
+              <select class="form-control" formControlName="educationalStatus">
+                <option value="" selected>Select Educational Status....</option>
+                <option value="Post Graduation" selected> Post Graduation </option>
+                <option value="Graduation" selected> Graduation </option>
+                <option value="HSC" selected> HSC </option>
+                <option value="SSC" selected> SSC </option>
+                <option value="N/A" selected> N/A </option>
+                <!-- <option *ngFor="let role of allRole" [value]="role.id">
+                        {{ role.name }}
+                      </option> -->
+              </select>
+            </div>
+
+            <div class="col-md-12">
+              <label class="labels">Department</label>
+              <select class="form-control" formControlName="department">
+                <option value="" selected>Select Department....</option>
+                <option value="HR" selected> HR </option>
+                <option value="IT" selected> IT </option>
+                <option value="Marketing" selected> Marketing </option>
+                <option value="Accounts" selected> Accounts </option>
+                <!-- <option *ngFor="let role of allRole" [value]="role.id">
+                        {{ role.name }}
+                      </option> -->
+              </select>
+            </div>
+            <br />
+            <div class="col-md-12">
+              <label class="labels">Designation</label>
+              <select class="form-control" formControlName="employeeDesignation">
+                <option value="" selected>Select Designation....</option>
+                <option value="Manager" selected> Manager </option>
+                <option value="Senior Officer" selected> Senior Officer </option>
+                <option value="Officer" selected> Officer </option>
+                <option value="Intern" selected> Intern </option>
+                <!-- <option *ngFor="let role of allRole" [value]="role.id">
+                        {{ role.name }}
+                      </option> -->
+              </select>
+            </div>
+
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <label class="labels">Password</label><input type="password" class="form-control"
+                placeholder="Enter Passwords" value="" formControlName="password" />
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Retype Password</label><input type="password" class="form-control"
+                placeholder="Enter Passwords" value="" />
+            </div>
+
+            <div class="col-md-12">
+              <label class="labels">Image</label><input type="file" class="form-control" value="" placeholder="state"
+                formControlName="employeeImage" (change)="CreateBase64String($event)" />
+            </div>
+          </div>
+          <div class="mt-5 text-center">
+            <button class="btn btn-primary profile-button" type="submit">
+              Save Profile
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 py-5">
+        <div class="d-flex justify-content-between align-items-center experience">
+          <h2><span>Import File </span></h2>
+          <span *ngIf="!fileShow" (click)="fileShowValue()" class="border px-3 p-1 add-experience"
+              ><i class="fa fa-plus"></i>&nbsp;Add File</span
+            >
+
+         
+        </div>
+        <div *ngIf="fileShow" class="mt-1 text-center">
+          <input type="file" class="form-control" (change)="selectFile($event)"/>
+          <button (click)="uploadFile()" class="btn btn-primary profile-button mt-3" type="submit">
+            Upload
+          </button>
+        </div>
+        <br />
+        <div class="col-md-12">
+          <label class="labels">Experience in HR</label><input type="text" class="form-control"
+            placeholder="experience" value="" />
+        </div>
+        <br />
+        <div class="col-md-12">
+          <label class="labels">Additional Details</label><input type="text" class="form-control"
+            placeholder="additional details" value="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

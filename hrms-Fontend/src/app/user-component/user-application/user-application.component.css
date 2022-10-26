@@ -1,0 +1,46 @@
+table{
+    
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px #e1e5ee;
+    background-color: white;
+    text-align: center;
+    overflow: hidden;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 98%;
+    
+}
+thead {
+    box-shadow: 0 5px 10px #e1e5ee;
+  }
+
+  th {
+   margin-left: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+  }
+
+  td {
+    padding: 1rem 1.7rem;
+  }
+
+  td a {
+    text-decoration: none;
+    color: #28B463;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+
+  .status-pending {
+    background-color: #fff0c2;
+    color: #c62828;
+    font-weight: 500;
+  }
+  .status-paid {
+    background-color: #c8e6c9;
+    color: #388e3c;
+  }
+  

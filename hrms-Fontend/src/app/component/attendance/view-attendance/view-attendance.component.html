@@ -1,0 +1,86 @@
+<table>
+    <thead>
+      <tr>
+        <th>SL</th>
+        <th>Employee ID</th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Punch In</th>
+        <th>Punch Out</th>
+        <th>Status</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of allData; let i=index">
+        
+        <td>{{i+1}}</td>
+        <td>{{item.employeeId.employeeId}}</td>
+        <td><a href="#">{{item.employeeId.employeeName}}</a></td>
+        <td>{{item.punchIn | date: 'MMM d, y'}}</td>
+        <td class="amount">{{item.punchIn | date: 'h:mm:ss a'}}</td>
+        <td class="amount">{{item.punchOut | date: 'h:mm:ss a'}}</td>
+        <td>
+          <p [className]="item.status !== 'Present' ? 'status status-pending mt-3' : 'status status-paid mt-3'">{{item.status}}</p>
+        </td>
+        
+        <td class="amount">{{item.workDuration}}</td>
+      </tr>
+      <!-- <tr>
+        
+        <td>2</td>
+        <td>IDB-1266359</td>
+        <td><a href="#">Helal Uddin</a></td>
+        <td>1/4/2021</td>
+        <td class="amount">18:42:08</td>
+        <td class="amount">20:47:59</td>
+        <td>
+          <p class="status status-paid">Present</p>
+        </td>
+        
+        <td class="amount">$520.18</td>
+      </tr>
+      <tr>
+        
+        <td>3</td>
+        <td>IDB-1266359</td>
+        <td><a href="#">Helal Uddin</a></td>
+        <td>1/4/2021</td>
+        <td class="amount">18:42:08</td>
+        <td class="amount">20:47:59</td>
+        <td>
+          <p class="status status-pending">Late</p>
+        </td>
+        
+        <td class="amount">$520.18</td>
+      </tr>
+      <tr>
+        
+        <td>4</td>
+        <td>IDB-1266359</td>
+        <td><a href="#">Helal Uddin</a></td>
+        <td>1/4/2021</td>
+        <td class="amount">18:42:08</td>
+        <td class="amount">20:47:59</td>
+        <td>
+          <p class="status status-pending">Late</p>
+        </td>
+        
+        <td class="amount">$520.18</td>
+      </tr>
+      <tr>
+        
+        <td>5</td>
+        <td>IDB-1266359</td>
+        <td><a href="#">Helal Uddin</a></td>
+        <td>1/4/2021</td>
+        <td class="amount">18:42:08</td>
+        <td class="amount">20:47:59</td>
+        <td>
+          <p class="status status-paid">Present</p>
+        </td>
+        
+        <td class="amount">$520.18</td>
+      </tr> -->
+    </tbody>
+  </table>

@@ -1,0 +1,48 @@
+<div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-transparent">
+
+    <div class="body flex-grow-1 px-3">
+        <div class="container-lg">
+            <div class="card email-app">
+                <div class="card-body">
+                    <form [formGroup] = "formGroup">
+                        <div class="row mb-3">
+                            <label class="col-2 col-sm-1 col-form-label" for="to">To:</label>
+                            <div class="col-10 col-sm-11">
+                                <input class="form-control" formControlName="to" type="email" placeholder="Recipients">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-2 col-sm-1 col-form-label" for="cc">CC:</label>
+                            <div class="col-10 col-sm-11">
+                                <input class="form-control" id="cc" type="email" placeholder="Type email">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-2 col-sm-1 col-form-label" for="bcc">Subject:</label>
+                            <div class="col-10 col-sm-11">
+                                <input class="form-control" formControlName="subject" id="bcc" type="email" placeholder="Type email subject">
+                            </div>
+                        </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-11 ms-auto">
+                            
+                            <div class="mb-3 mt-4">
+                                <textarea class="form-control" formControlName="message"  name="body" rows="12"
+                                    placeholder="Type here to your email"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-success" (click)="sendMail()" type="submit">Send</button>
+                                <button class="btn btn-light ml-2" type="submit">Draft</button>
+                                <button class="btn btn-danger ml-2" (click)="refresh()" type="reset">Discard</button>
+                            </div>
+                        </div>
+                    </div>
+               </form>
+               
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

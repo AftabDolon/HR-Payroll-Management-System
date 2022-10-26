@@ -1,0 +1,42 @@
+<div class="card" style="margin-top: 4.5rem!important;">
+    <div class="card-header">
+      <span><i class="bi bi-table me-2"></i></span> Application History
+    </div>
+  <table class="table table-bordered table-striped table-responsive mt-2 ml-3 bg-white">
+      <thead>
+          <tr>
+              <th scope="col">Action</th>
+              <th scope="col">Employee ID</th>
+              <th scope="col">Employee Name</th>
+              
+              <th scope="col">Department</th>
+              <th scope="col">Designation</th>
+              <th scope="col">Application Date</th>
+              <th scope="col">Attendance Date</th>
+              <th scope="col">Status</th>
+              <th scope="col">Reason</th>
+              
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of applicationList; let i = index">
+          <td style="cursor: pointer;"><i class="fa fa-eye "></i></td>
+  
+          <td>{{item.employee.employeeId}}</td>
+          <td>{{item.employee.employeeName}}</td>
+          <td>{{item.employee.department}}</td>
+          <td>{{item.employee.employeeDesignation}}</td>
+          <td>{{item.applicationDate | date: 'MMM, y'}}</td>
+          <td>{{item.attendanceDate | date: 'MM-dd-yy'}}</td>
+          <td [className]="item.status !== 'Pending' ? 'status status-paid mt-3' : 'status status-pending text-danger mt-3'">{{item.status}}</td>
+          <td>{{item.message}}</td>
+          <!-- <td> {{item.paymentType}} </td>
+          <td>
+              <a >Generate Payslip</a>
+          </td> -->
+      </tr>
+  
+      </tbody>
+  </table>
+  
+  </div>

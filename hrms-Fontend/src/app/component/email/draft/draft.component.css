@@ -1,0 +1,133 @@
+.emailList {
+    flex: 1;
+    /* overflow: scroll; */
+}
+
+.emailList_settings {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid whitesmoke;
+    background-color: white;
+    z-index: 999;
+    padding: 8px;
+}
+
+.emailList_settingLeft {
+    display: flex;
+    align-items: center;
+}
+
+.emailList_settings .material-icons {
+    margin: 5px;
+    cursor: pointer;
+}
+
+.emailList_sections {
+    position: sticky;
+    top: 0;
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid whitesmoke;
+    z-index: 999;
+    height: 50px;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    border-bottom-width: 2px;
+    padding: 15px;
+    min-width: 200px;
+    cursor: pointer;
+    color: grey;
+    border-width: 0;
+}
+
+.section_selected {
+    background-color: whitesmoke;
+    border-width: 3px;
+    color: #0b57d0;
+    border-bottom: 3px solid #369;
+}
+
+.section_selected .material-icons {
+    color:#0b57d0;
+}
+
+.section:hover {
+    background-color: whitesmoke;
+    border-width: 3px;
+}
+
+.section h4 {
+    font-size: 14px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.emailRow_options {
+    display: flex;
+    align-items: center;
+}
+
+.emailRow_options .material-icons,
+input {
+    margin: 5px;
+    color: #666;
+}
+
+.emailRow {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid whitesmoke;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.emailRow:hover {
+    border-top: 1px solid whitesmoke;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.24);
+}
+
+.emailRow_message {
+    display: flex;
+    flex: 0.8;
+    align-items: center;
+    font-size: 13px;
+    margin-top: 16px
+}
+
+.emailRow_message h4 {
+    width: 600px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.emailRow_title {
+    font-size: 15px;
+    flex: 0.3;
+    margin-top: 16px;
+    /* font-weight: bold; */
+    color: red;
+}
+.emailRow_title span{
+    color: #333;
+}
+.emailRow_time {
+    padding-right: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 16px
+}
+
+.emailRow_description {
+    font-weight: 400;
+    color: gray;
+
+}

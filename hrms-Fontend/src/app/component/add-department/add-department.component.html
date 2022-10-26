@@ -1,0 +1,51 @@
+
+<div class="row">
+    <div class="col-sm-12">  
+        <div class="wrap-fpanel">
+            <div class="panel panel-default" data-collapsed="0">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <strong>Add Department</strong>
+                    </div>
+                </div>
+                <div class="panel-body">
+
+                    <form  id="form_validation" class="form-horizontal form-groups-bordered">
+
+                        <div class="form-group">
+                            <label for="field-1" class="col-sm-3 control-label">Add Department <span class="required"> *</span></label>
+
+                            <div class="col-sm-5">                            
+                                <input type="text" name="department_name" class="form-control" placeholder="Enter Your Department Name" required/>
+                            </div>                           
+                        </div>
+                        <div id="add_new" class="margin" *ngFor="let value of values; let i = index">
+                            
+                                    <div class="form-group">
+                                        <label [(ngModel)]="value.name" #name="ngModel" name="value{{i}}" for="field-1" class="col-sm-3 control-label">Add Designation <span class="required"> *</span></label>
+
+                                        <div class="col-sm-5">                            
+                                            <input [(ngModel)]="value.price" #name="ngModel" name="value{{i}}" type="text" class="form-control" placeholder="Enter Your Designations"/>
+                                        </div>                                                      
+                                        <!-- <div class="col-sm-2">                            
+                                            
+                                        </div> -->
+                                    </div>
+                                    <input type="hidden" class="form-control" placeholder="Enter Your Designations"/>                                    
+                                       
+                                <div class="col-sm-offset-8">                            
+                                    <strong><a (click)="addvalue()" id="add_more" class="addCF "><i class="fa fa-plus"></i>&nbsp;Add More</a></strong>
+                                </div>
+            
+                        </div>
+                        <div class="form-group margin">
+                            <div class="col-sm-offset-3 col-sm-5">
+                                <button type="submit" id="sbtn" class="btn btn-primary">Save</button>                            
+                            </div>
+                        </div>
+                    </form>
+                </div>                 
+            </div>                 
+        </div>          
+    </div>   
+</div>

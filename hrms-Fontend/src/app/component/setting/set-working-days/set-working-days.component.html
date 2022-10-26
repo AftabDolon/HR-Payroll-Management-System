@@ -1,0 +1,78 @@
+
+
+<div class="row">
+    <div class="col-sm-12"> 
+        <div class="wrap-fpanel">
+            <div class="panel panel-default" data-collapsed="0">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <strong>Set Working Days</strong>                    
+                    </div>                
+                </div>
+                <div class="panel-body">
+
+                    <form id="set_working_days" class="form-horizontal form-groups-bordered">                                                           
+                        <div class="form-group">
+                            <!-- List  of days -->
+                            <!--Retrieve Days from Database -->
+                                <div *ngFor="let day of days" class="checkbox-inline">                                
+                                    <label class="col-sm-1 "> 
+                                        <input  type="checkbox"/> {{day.first}}
+                                        <span><input  type="hidden" ></span>
+                                    </label>  
+                                                                  
+                                </div>
+                                <div *ngFor="let day of days" class="checkbox-inline">                                
+                                    <label class="col-sm-1 "> 
+                                        <input  type="checkbox" checked/> {{day.second}}
+                                        <span><input  type="hidden" ></span>
+                                    </label>
+                                                                  
+                                </div>
+                                <div *ngFor="let day of days" class="checkbox-inline">                                
+                                    <label class="col-sm-1 "> 
+                                        <input  type="checkbox" checked/> {{day.third}}
+                                        <span><input  type="hidden" ></span>
+                                    </label>
+                                                                  
+                                </div>
+                                <div *ngFor="let day of days" class="checkbox-inline">                                
+                                    <label class="col-sm-1 "> 
+                                        <input  type="checkbox" checked/> {{day.fourth}}
+                                        <span><input  type="hidden" ></span>
+                                    </label>
+                                                                  
+                                </div>
+                                <div *ngFor="let day of days" class="checkbox-inline">                                
+                                    <label class="col-sm-1 "> 
+                                        <input  type="checkbox" checked/> {{day.five}}
+                                        <span><input  type="hidden" ></span>
+                                    </label>
+                                                                  
+                                </div>
+                                <div *ngFor="let day of days" class="checkbox-inline">                                
+                                    <label class="col-sm-1 "> 
+                                        <input  type="checkbox" checked/> {{day.six}}
+                                        <span><input  type="hidden" ></span>
+                                    </label>
+                                                                  
+                                </div>
+                                <div *ngFor="let day of days" class="checkbox-inline">                                
+                                    <label class="col-sm-1 "> 
+                                        <input  type="checkbox"/> {{day.seven}}
+                                        <span><input  type="hidden" ></span>
+                                    </label>
+                                                                  
+                                </div>
+                            
+                            <div class="col-sm-2 pull-right">
+                                <button type="submit" id="sbtn" class="btn btn-primary">Save</button>                            
+                            </div>
+                        </div> 
+                    </form>
+                </div>            
+            </div>          
+        </div>          
+
+    </div>   
+</div>

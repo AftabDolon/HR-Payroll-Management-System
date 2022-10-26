@@ -1,0 +1,97 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Mukta, sans-serif;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  color: #4f546c;
+  font-size: 0.9rem;
+  background-color: #f9fbff;
+}
+
+table {
+  border-collapse: collapse;
+  box-shadow: 0 5px 10px #e1e5ee;
+  background-color: white;
+  text-align: left;
+  overflow: hidden;
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 140%;
+
+}
+thead {
+    box-shadow: 0 5px 10px #e1e5ee;
+  }
+
+  th {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+  }
+
+  td {
+    padding: 1rem 1.7rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #2962ff;
+    cursor: none;
+  }
+
+  .status {
+    border-radius: 0.2rem;
+    background-color: red;
+    padding: 0.2rem 1rem;
+    text-align: center;
+
+  }
+  .status-pending {
+    background-color: #fff0c2;
+    color: #c62828;
+  }
+
+    .status-paid {
+      background-color: #c8e6c9;
+      color: #388e3c;
+    }
+
+    .status-unpaid {
+      background-color:  #ffcdd2;
+      color: #c62828;
+    }
+  
+
+  .amount {
+    text-align: right;
+  }
+
+  /* //Color alternating rows */
+  tr:nth-child(even) {
+    background-color:  #f4f6fb;
+  }
+  /* .add-experience{
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 18px;
+    margin-right: 25px;
+}
+.add-experience:hover {
+    background: #e91e63;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #e91e63;
+    box-shadow: 0 2px 20px #e91e63;
+} */

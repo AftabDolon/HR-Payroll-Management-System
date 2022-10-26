@@ -1,0 +1,152 @@
+<!-- form section -->
+<!-- [formGroup]="purposeForm" (ngSubmit)="savePurpose()" -->
+<div class="container rounded bg-white mt-2">
+    <div class="row">
+        <div class="col-md-6 border-right ml-5">
+            <div id="accordion">
+                <div class="card mt-2">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+                            </button><span class="header">Add User</span>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+
+                            <form [formGroup]="formValue">
+                                <div class="p-3 py-1">
+                                    <div class="row mt-1">
+                                        <div class="col-md-12">
+                                            <label class="labels">User Name</label><input type="text"
+                                                class="form-control" placeholder="Enter User Name" value=""
+                                                formControlName="username" />
+                                        </div>
+                                        <div class="col-md-12 mt-2">
+                                            <label class="labels">Email Address</label><input type="text"
+                                                class="form-control" placeholder="Enter Email Address" value=""
+                                                formControlName="email" />
+                                        </div>
+                                        <div class="col-md-12 mt-2">
+                                            <label class="labels">Employee ID</label>
+                                            <select #id formControlName="employee_id" class="form-control">
+                                                <option>Select Employee ID</option>
+                                                <option *ngFor="let empId of employeeIds" [value]="empId[0]">{{empId[1]}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 text-center">
+                                        <button (click)="createUser()" class="btn btn-primary profile-button" type="submit">
+                                            Add User
+                                        </button>
+                                        <span>||</span>
+                                        <button class="btn btn-primary profile-button" type="submit">
+                                            View User
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="p-3 py-3"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<table class="table table-bordered table-striped table-responsive mt-2 bg-white">
+    <thead>
+        <tr>
+            <th scope="col">SL No</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Email</th>
+            
+            <th scope="col">Name</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Department</th>
+            <th scope="col">Access Approved</th>
+            <th scope="col"> Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of userList; let i = index">
+            <td>{{i+1}}</td>
+
+            <td>{{row.username}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.employee.employeeName}}</td>
+            <td>{{row.employee.phone}}</td>
+            <td>{{row.employee.department}}</td>
+            <td>
+                <div class="form-check form-switch">
+                    <input [checked]="checked" class="form-check-input ml-2" [(ngModel)]="row.status"
+                        name="status_{{row.id}}" type="checkbox" (change)="checkValue($event,row.id)">
+                    
+
+                </div>
+                
+                <!-- <div class="check">
+                    <label>
+                        <input [checked]="checked" [(ngModel)]="row.status" name="status_{{row.id}}" type="checkbox" (change)="checkValue($event,row.id)">
+                        <span>Active</span>
+                    </label>
+                </div> -->
+            </td>
+            <td>
+                <div class="btn-group mx-1" role="group">
+                    
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        class="btn btn-sm btn-warning">Edit</button>
+                    <button class="btn btn-sm btn-danger ml-2">Delete</button>
+                </div>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+<!-- <table>
+    <tr id="header">
+        <th>SL No</th>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Country</th>
+        <th>Gender</th>
+    </tr>
+    <tbody>
+    <tr *ngFor="let row of ambulanceHireData; let i = index">
+        <td>{{i+1}} </td>
+        <td>{{row.username}}</td>
+        <td>{{row.email}}</td>
+        <td> 
+            <div class="form-check form-switch">
+                <input [checked]="checked" class="form-check-input" [(ngModel)]="row.status"
+                    name="status_{{row.id}}" type="checkbox" (change)="checkValue($event,row.id)">
+                
+
+            </div>
+        </td>
+        <td>Male </td>
+        <td>
+            <div class="btn-group mx-1" role="group">
+                    
+                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    class="btn btn-sm btn-warning">Edit</button>
+                <button class="btn btn-sm btn-danger ml-2">Delete</button>
+            </div>
+        </td>
+    </tr>
+
+    </tbody>
+
+</table> -->

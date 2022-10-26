@@ -1,0 +1,28 @@
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: inherit;
+}
+.panel-title > a {
+    color: inherit;
+}
+.pull-right {
+    float: right !important;
+}
+.btn-xs {
+    border-radius: 0 2px 2px 0;
+    margin-right: 5px;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}

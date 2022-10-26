@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row justify-content mt-5" style="margin-left: 25%;">
+        <div class="col-md-8 card" style="margin-top: 50px;">
+            <div class="row">
+                <h2 class="col mt-3 ml-5">{{dateTime | date: 'MMMM d, y, h:mm:ss a'}}</h2>
+            </div>
+            <hr>
+            <form [formGroup] = "formGroup">
+                <div class="form-group mt-2">
+                    <label class="fw-bold mb-3">Select Employee Number</label>
+                    <!-- <input #id formControlName="employee_id" type="text" class="form-control"> -->
+                    <select #id formControlName="employee_id" class="form-control" >
+                        <option>Select Employee ID</option>
+                        <option *ngFor="let empId of employeeIds" [value]="empId[0]">
+                            {{empId[1]}}
+                        </option>
+                    </select>
+                </div>
+                <div class="btn-row mt-4">
+                    <button type="submit" class="btn btn-primary ml-5" (click)="addInAm(id.value)">IN AM</button>
+                    <button type="submit" class="btn btn-primary ml-3" (click)="addOutAm(id.value)">OUT AM</button>
+                    <button type="submit" class="btn btn-primary ml-3" >IN PM</button>
+                    <button type="submit" class="btn btn-primary ml-3" >OUT PM</button>
+                </div>
+            </form>
+            <div *ngIf="!success" style="margin-top: 10%;"> </div>
+    
+            <div *ngIf="success" class="alert alert-success mt-5" role="alert">
+                <h4 class="alert-heading">Success!</h4>
+                <p>User, Your Attendance Successfully has been recorded.</p>
+            </div>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,151 @@
+<div class="content-header">
+    <div class="container-fluid">
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+
+  
+
+  <div class="sales-report-area mt-5 mb-3 mx-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="single-report mb-xs-30">
+                <div class="s-report-inner pr--20 pt--30 mb-3">
+                    <div class="icon elevation-3" style="background-color:  #4336FB;"><i class="fas fa-briefcase"></i></div>
+                    <div class="s-report-title d-flex justify-content-between">
+                        <h4 class="header-title mb-0">Available Leave Types</h4>
+                        
+                    </div>
+                    <div class="d-flex justify-content-between pb-2">
+                        <h1>4</h1>
+                        <span>Leave Types</span>
+                    </div>
+                </div>
+                <!-- <canvas id="coin_sales1" height="100"></canvas> -->
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="single-report mb-xs-30">
+                <div class="s-report-inner pr--20 pt--30 mb-3">
+                    <div class="icon"><i class="fas fa-users"></i></div>
+                    <div class="s-report-title d-flex justify-content-between">
+                        <h4 class="header-title mb-0">Registered Employees</h4>
+                        
+                    </div>
+                    <div class="d-flex justify-content-between pb-2">
+                        <h1>{{this.employeeList}}</h1>
+                        <span>Active Employees</span>
+                    </div>
+                </div>
+                <!-- <canvas id="coin_sales2" height="100"></canvas> -->
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="single-report">
+                <div class="s-report-inner pr--20 pt--30 mb-3">
+                    <div class="icon"><i class="fa fa-th-large"></i></div>
+                    <div class="s-report-title d-flex justify-content-between">
+                        <h4 class="header-title mb-0">Available Departments</h4>
+                        
+                    </div>
+                    <div class="d-flex justify-content-between pb-2">
+                        <h1>{{this.departmentList}}</h1>
+                        <span>Employee Departments</span>
+                    </div>
+                </div>
+                <!-- <canvas id="coin_sales3" height="100"></canvas> -->
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="single-report mb-xs-30">
+                <div class="s-report-inner pr--20 pt--30 mb-3">
+                    <div class="icon"><i class="fa fa-spinner"></i></div>
+                    <div class="s-report-title d-flex justify-content-between">
+                        <h4 class="header-title mb-0">Pending Application</h4>
+                        
+                    </div>
+                    <div class="d-flex justify-content-between pb-2">
+                        <h1>{{this.pendingList}}</h1>
+                        <span>Pending</span>
+                    </div>
+                </div>
+                <!-- <canvas id="coin_sales1" height="100"></canvas> -->
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="single-report mb-xs-30">
+                <div class="s-report-inner pr--20 pt--30 mb-3">
+                    <div class="icon"><i class="fa fa-times"></i></div>
+                    <div class="s-report-title d-flex justify-content-between">
+                        <h4 class="header-title mb-0">Declined Application</h4>
+                        
+                    </div>
+                    <div class="d-flex justify-content-between pb-2">
+                        <h1>8</h1>
+                        <span>Declined</span>
+                    </div>
+                </div>
+                <!-- <canvas id="coin_sales2" height="100"></canvas> -->
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="single-report">
+                <div class="s-report-inner pr--20 pt--30 mb-3">
+                    <div class="icon"><i class="fa fa-check-square"></i></div>
+                    <div class="s-report-title d-flex justify-content-between">
+                        <h4 class="header-title mb-0">Approved Application</h4>
+                        
+                    </div>
+                    <div class="d-flex justify-content-between pb-2">
+                        <h1>{{this.approvedList}}</h1>
+                        <span>Approved</span>
+                    </div>
+                </div>
+                <!-- <canvas id="coin_sales3" height="100"></canvas> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="board"  id="excel-table">
+  <table class="table" width="100%">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Title</th>
+              <th>Status</th>
+              <th>Role</th>
+              <th></th>
+          </tr>
+      </thead>
+      <tbody>
+        
+          <tr *ngFor="let item of userList">
+            <td class="people">
+                <img src="../../assets/img/{{item.employee.image}}" alt="">
+                <div [className]="item.activity !== 'Active' ? 'circle-indactive' : 'circle-indicator pulse'"></div>
+                <div class="people-de">
+                    <h5>{{item.employee.employeeName}}</h5>
+                    <p>{{item.employee.email}}</p>
+                </div>
+            </td>
+            <td class="people-des">
+                <h5>{{item.employee.designation}}</h5>
+                <p>{{item.employee.department}}</p>
+            </td>
+            <td [className]="item.activity !== 'Active' ? 'in-active' : 'active'">
+                <p>{{item.activity}}</p>
+            </td>
+            <td class="role">
+                <p>{{item.employee.role}}</p>
+            </td>
+            <td><a href="http://localhost:4200/admin/activity"><button>View</button></a></td>
+        </tr>
+      </tbody>
+  </table>
+</div>

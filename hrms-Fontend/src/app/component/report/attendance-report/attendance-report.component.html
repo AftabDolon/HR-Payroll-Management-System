@@ -1,0 +1,84 @@
+<div class="attendance">
+    <div class="attendance-list">
+        <h1 class="ml-3 fw-bold text-success mt-2">Attendance Report</h1>
+        <button style=" margin-left: 30px; font-weight: bold;" mat-raised-button color="accent" (click)="generate()"><i
+                class='fas fa-plus-circle fa-lg'></i>&nbsp;&nbsp;Generate Report&nbsp;&nbsp;</button>
+    </div>
+</div>
+
+<div *ngIf="!success" class="row mt-5">
+    <div class="col-md-12">
+        <h1 class=" text-center text-secondary fw-bold">No Data, Please Click the Generate Report button and Pick Your
+            Specific Date!</h1>
+    </div>
+</div>
+
+
+<div *ngIf="success" class="container">
+    <div class="row" style="float: right;">
+        <div class="col-md-12" style="margin-right: 30px;">
+            <select (change)="showUserValue($any($event.target).value)" #reportType class="form-control"
+                [(ngModel)]="selected">
+                <option value="">Choose Report Type</option>
+                <option value="all">All Employee Value</option>
+
+                <option value="single">Single User Value</option>
+            </select><br>
+        <select #id *ngIf="value"  (change)="getUserValue($any($event.target).value)"
+            class="form-select-lg">
+                <option>Select Employee ID</option>
+                <option *ngFor="let empId of employeeIds" [value]="empId[0]">
+                    {{empId[1]}}
+                </option>
+            </select><br>
+
+            <input #date1 style="width: 100px;" class="mr-2" type="date">
+            <input #date2 style="width: 100px;" type="date">
+            <!-- <button type="button" class="btn btn-success ml-3 fw-bold">Show</button> -->
+            <button mat-raised-button class="fw-bold ml-3" color="primary"
+                (click)="showUser(date1.value, date2.value)">Show</button>
+
+        </div>
+    </div><br><br><br><br>
+
+    <div class="row">
+        <div class="col-md-12 mt-5" style="margin-top: 5rem!important;;">
+
+            <div class="">
+                <button class="" style="margin-left: 130%;" mat-mini-fab color="warn" (click)="exportexcel()"><i
+                        class='fas fa-download fa-lg'></i></button><br><br>
+                <table id="excel-table">
+
+                    <thead>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Punch In Time</th>
+                            <th>Punch Out Time</th>
+                            <th>Working Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of allPerson">
+                            <td><a href="#">{{item.employeeId.employeeId}}</a></td>
+                            <td>{{item.employeeId.employeeName}}</td>
+                            <td>{{item.punchIn | date: 'MMM d, y'}}</td>
+                            <td>
+                                <p class="status status-paid">{{item.punchIn | date: 'h:mm:ss a'}}</p>
+                            </td>
+                            <td>
+                                <p class="status status-pending">{{item.punchOut | date: 'h:mm:ss a'}}</p>
+                            </td>
+                            <td>
+                                <p class="">{{item.workDuration}}</p>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

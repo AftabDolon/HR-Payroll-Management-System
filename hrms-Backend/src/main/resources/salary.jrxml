@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5b394c51-e20b-413e-a1d6-e3f224001a92">
+
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="133" splitType="Stretch">
+            <staticText>
+                <reportElement x="178" y="-11" width="250" height="40" uuid="607010ee-d4a9-4678-9749-29c1716d9ef4">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="22" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Example Company Ltd.]]></text>
+            </staticText>
+            <image>
+                <reportElement x="-7" y="5" width="70" height="70" uuid="55142c11-5f03-474a-a4e5-8f9a7937b368">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <imageExpression><![CDATA["src\\img\\img2.png"]]></imageExpression>
+            </image>
+            <staticText>
+                <reportElement x="244" y="30" width="100" height="25" uuid="d5c61701-c7af-432c-bb51-3d7baa2ac9a5">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Tahoma" size="17" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Payslip]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="184" y="53" width="115" height="25" uuid="9c497035-ecff-4ef1-ba98-5c9ff59c64a3">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Tahoma" size="16" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Salary Month:]]></text>
+            </staticText>
+            <textField pattern="MMMMM , yyyy">
+                <reportElement x="292" y="53" width="136" height="25" uuid="fddc66f0-312f-4564-99f2-d6b665731377">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Tahoma" size="16" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="435" y="84" width="76" height="25" uuid="7f6f5768-b967-48c4-b859-2e6be48a19f3">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Tahoma" size="13" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Payslip No:]]></text>
+            </staticText>
+            <textField pattern="yyyyMMdd">
+                <reportElement x="501" y="88" width="86" height="20" uuid="36d5430b-423d-49e1-8ef7-32f4b215d3f6">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+                    <font fontName="Tahoma" size="13"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="166" y="85" width="114" height="25" uuid="aef6f224-a2a9-4b47-a222-d168a25972f5">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Tahoma" size="13" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Employee Name:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="286" y="86" width="134" height="25" uuid="7e192e74-6966-4426-aa33-de4ecd6924b3">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Tahoma" size="13"/>
+                </textElement>
+                <textFieldExpression><![CDATA[Aftab Ibne Halim]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="-9" y="85" width="91" height="25" uuid="a645da72-9372-4ab2-885b-f12938e7b2f4">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Tahoma" size="13" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Employee ID:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="71" y="85" width="113" height="25" uuid="346d51e9-ba0c-4bb9-bd73-ba876b6e2240">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Tahoma" size="13"/>
+                </textElement>
+                <textFieldExpression><![CDATA[IDB1267682]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <detail>
+        <band height="125" splitType="Stretch"/>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>

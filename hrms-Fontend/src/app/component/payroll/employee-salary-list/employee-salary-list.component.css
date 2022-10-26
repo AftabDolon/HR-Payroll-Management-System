@@ -1,0 +1,51 @@
+table {
+    width: 100%;
+  }
+
+  .wrap-fpanel .panel-default > .panel-heading {
+    border-color: #466472;
+    color: #fff;
+    background-color: #466472;
+    margin-top: 7px;
+    
+
+}
+
+.wrap-fpanel .panel-body {
+    background-color: #ECF0F1;
+    border-left: 1px solid #C6D2D8;
+    border-bottom: 1px solid #C6D2D8;
+    border-right: 1px solid #C6D2D8;
+    padding-bottom: 80px;
+    
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.panel-body {
+    padding: 15px;
+    
+}
+.panel-heading {
+    padding: 15px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.panel-heading > .dropdown .dropdown-toggle {
+    color: inherit;
+}
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: inherit;
+}
+.panel-title > a {
+    color: inherit;
+}

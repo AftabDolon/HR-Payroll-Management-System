@@ -1,0 +1,159 @@
+    <div class="card" style="margin-top: 4.5rem!important;">
+        <div class="card-header">
+          <span><i class="bi bi-table me-2"></i></span> Salary History
+        </div>
+      <table class="table table-bordered table-striped table-responsive mt-2 ml-3 bg-white">
+          <thead>
+              <tr>
+                  <th scope="col">Action</th>
+                  <th scope="col">Employee ID</th>
+                  <th scope="col">Employee Name</th>
+                  
+                  <th scope="col">Paid Amount</th>
+                  <th scope="col">Payment Month</th>
+                  <th scope="col">Payment Date</th>
+                  <th scope="col">Payment Type</th>
+                  <th scope="col"> Payslip</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of salaryList; let i = index">
+              <td style="cursor: pointer;"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></td>
+      
+              <td>{{item.employee.employeeId}}</td>
+              <td>{{item.employee.employeeName}}</td>
+              <td> BDT {{item.grossSalary}} </td>
+              <td>{{item.paymentDate | date: 'MMM, y'}}</td>
+              <td>{{item.paymentDate | date: 'MM-dd-yy'}}</td>
+              <td> {{item.paymentType}} </td>
+              <td>
+                  <a (click)="showModal(item.id)" data-toggle="modal" data-target=".bd-example-modal-lg">Generate Payslip</a>
+              </td>
+          </tr>
+      
+          </tbody>
+      </table>
+      
+      </div>
+
+      <!-- My modal  for report-->
+<div id="modalTable" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-lg">
+  <div class="modal-content" id="modalTable">
+
+    <div class="card">
+      <div class="card-body">
+        <div class="container mb-5 mt-3">
+          <div class="row d-flex align-items-baseline">
+            <div class="col-xl-9">
+              <p style="color: #7e8d9f;font-size: 20px;">Payslip No>> <strong>ID: #{{this.datePurpose | date: 'yyyymmdd'}}</strong>
+              </p>
+            </div>
+            <div class="col-xl-3 float-end">
+              <a class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark"><i
+                  class="fas fa-print text-primary"></i> Print</a>
+              <a class="btn btn-light text-capitalize" (click)="openPDF()" data-mdb-ripple-color="dark"><i
+                  class="far fa-file-pdf text-danger"></i> Export</a>
+            </div>
+            <hr>
+          </div>
+
+          <div class="container">
+            <div class="col-md-12">
+              <div class="text-center">
+                <img class="mt-1 logo" src="../../../../assets/img/img2.png" alt="HR Logo">
+
+                <p class="pt-0 title fw-bold">examplecompany Ltd.</p>
+              </div>
+
+            </div>
+
+
+            <div class="row">
+              <div class="col-xl-8">
+                <ul class="list-unstyled">
+                  <li class="text-muted">To: <span style="color:#5d9fc5 ;"> </span>
+                  </li>
+                  <li class="text-muted">Miazi Manjil, Tusardhara</li>
+                  <li class="text-muted">Sector-3, Road-3</li>
+                  <li class="text-muted">Kadamtali Thana, Dhaka -1362</li>
+                  <li class="text-muted"><i class="fas fa-phone"></i> 01726688322</li>
+                </ul>
+              </div>
+              <div class="col-xl-4">
+                <p class="text-muted">Salary Details: </p>
+                <ul class="list-unstyled">
+                  <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
+                      class="fw-bold">Salary By:</span> {{this.employeeNameValue}}</li>
+                  <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
+                      class="fw-bold">ID:</span> {{this.employeeIdValue}}</li>
+                  <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
+                      class="fw-bold">Creation Date: {{this.datePurpose | date: 'MMM d, y'}}</span></li>
+
+                </ul>
+              </div>
+            </div>
+
+            <div class="row my-1 mx-1 justify-content-center">
+              <table class="table table-striped table-borderless" >
+                <thead style="background-color:#84B0CA ;" class="text-white">
+                  <tr>
+                    <th scope="col">Payment Purpose</th>
+                    <th scope="col">Basic Salary</th>
+                    <th scope="col">House Allowance</th>
+                    <th scope="col">Medical Allowance</th>
+                    <th scope="col">Transport Allowance</th>
+                    <th scope="col">Tax</th>
+                    <th scope="col">Providend Fund</th>
+                    <th scope="col">Payment Method</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Salary</th>
+                    <td>{{this.basicSalary}}</td>
+                    <td>{{this.houseRent}}</td>
+                    <td>{{this.medicalAllowance}}</td>
+                    <td>{{this.transportAllowance}}</td>
+                    <td>{{this.tax}}</td>
+                    <td>{{this.providendFund}}</td>
+                    <td>{{this.payment}}</td>
+                    
+                   
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row">
+              <div class="col-xl-8">
+                <h4>Salary Details</h4>
+                <p class="ms-3">Add additional notes</p>
+                <!-- <p>{{modalDeposit[0].deposit_details}}</p> -->
+
+
+              </div>
+              <div class="col-xl-3">
+                <p class="text-black float-start"><span class="text-black me-3" style="font-size: 14px; font-weight: bold;"> Total Amount</span><span
+                    style="font-size: 20px;">{{this.netSalary}}</span></p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-xl-10">
+                <p>Thank you for your Co-operation</p>
+              </div>
+              <div class="col-xl-2">
+                <button data-dismiss="modal" type="button" class="btn btn-primary text-capitalize"
+                  style="background-color:#60bdf3 ;">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
